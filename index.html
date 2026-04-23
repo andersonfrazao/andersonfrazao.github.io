@@ -59,38 +59,9 @@
                 O maior sistema de agendamento de jogos da várzea está em construção. Nossa equipe está aquecendo no vestiário para entregar a plataforma definitiva para o seu time.
             </p>
         </div>
-
-        <div class="inline-block bg-slate-900/80 border border-slate-700/50 rounded-2xl p-6 shadow-inner w-full max-w-sm mx-auto">
-            <div class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
-                <i class="fas fa-eye text-blue-400"></i> Você é o visitante número
-            </div>
-            
-            <div class="bg-black/50 border border-blue-900/30 rounded-xl p-4 flex justify-center items-center">
-                <span id="contador-visitas" class="text-5xl font-digital text-blue-400 tracking-widest neon-text">
-                    0000
-                </span>
-            </div>
-        </div>
-
         <div class="mt-12 text-xs text-gray-500 font-semibold uppercase tracking-wider">
             <i class="fas fa-hammer mr-1"></i> Arena Match © 2026 - Em Breve
         </div>
     </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", async function () {
-    const elemento = document.getElementById("contador-visitas");
-
-    try {
-        const response = await fetch("https://api.countapi.xyz/hit/arenamatch.app.br/visitas");
-        const data = await response.json();
-
-        const numero = data.value.toString().padStart(6, "0");
-        elemento.textContent = numero;
-    } catch (error) {
-        elemento.textContent = "000000";
-    }
-});
-</script>
 </body>
 </html>
